@@ -1,4 +1,4 @@
-name: Repository 1 - REST API.
+name: Repository 2 - REST API.
 on:
   push:
     branches:
