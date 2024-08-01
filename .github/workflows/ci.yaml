@@ -1,8 +1,8 @@
 name: Repository 2 - REST API.
 on:
-  push:
-    branches:
-      - main
+  # Listen to a repository dispatch event by the name of `dispatch-event`
+  repository_dispatch:
+    types: [dispatch-event]
 
 permissions:
   id-token: write
@@ -13,4 +13,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run script
-        run: echo "testing..."
+        run: echo ${{ github.event.client_payload.message }}
